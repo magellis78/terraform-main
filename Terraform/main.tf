@@ -11,3 +11,11 @@ resource "google_compute_network" "vpc_network" {
     auto_create_subnetworks = "true"
   
 }
+
+terraform {
+  backend "gcs" {
+      bucket = "kennedy-bucket1"
+      prefix = " terraform sample practice"
+      credentials = file("kennedy-project1-345118-2676bb56a2d1")
+  }
+}
